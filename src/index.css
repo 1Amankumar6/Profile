@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global custom scrollbar styles (to be included in your main CSS file or inside your Tailwind config) */
+
+::-webkit-scrollbar {
+  width: 8px;  /* Sets the width of the vertical scrollbar */
+  height: 8px; /* Sets the height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00adb5; /* Set the color of the scrollbar thumb */
+  border-radius: 10px; /* Optional: makes the scrollbar thumb rounded */
+  border: 2px solid #222831; /* Optional: adds a border to the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333; /* Set the background color of the track */
+  border-radius: 10px; /* Optional: makes the scrollbar track rounded */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* Controls the width of the scrollbar */
+  scrollbar-color: #00adb5 #333; /* Sets the thumb and track colors */
+}
