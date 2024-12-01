@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
@@ -10,22 +10,18 @@ function Header() {
       className="sticky z-50 top-0"
       style={{ boxShadow: "0 4px 6px rgba(255, 255, 255, 0.3)" }}
     >
-      <nav className="bg-[#222831] shadow-md ">
+      <nav className="bg-[#222831] shadow-md">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between py-4">
             {/* Primary menu and logo */}
             <div className="flex items-center justify-between gap-[750px]">
-              {/* <div className="mr-[350px]"> */}
               <div className="">
-                <a
-                  href="/"
-                  className="flex gap-1 font-bold text-[#00adb5] items-center text-3xl"
-                >
-                  <Link to="">
-                    P<span className="text-xl text-[#eeeeee]">ortfolio</span>
-                  </Link>
-                </a>
+                <Link to="" className="flex font-bold text-[#00adb5] items-center text-4xl">
+                  P<span className="text-2xl text-[#eeeeee]">ortfolio</span>
+                </Link>
               </div>
+
+              {/* Desktop Menu */}
               <div className="hidden lg:flex font-semibold text-[16px] gap-8">
                 <NavLink
                   to="/"
@@ -70,29 +66,15 @@ function Header() {
               </div>
             </div>
 
-            {/* Secondary Section */}
-            <div className="flex items-center gap-6">
-              {/* <div className="hidden xs:flex items-center gap-10">
-                <div className="hidden lg:flex items-center gap-2">
-                  <FaMoon className="h-6 w-6 text-" />
-                  <FaSun className="h-6 w-6 text-gray-600" />
-                </div>
-                <div>
-                  <button className="rounded-full border-2 border-gray-300 py-2 px-4 hover:bg-gray-700 hover:text-white">
-                    Free Trial
-                  </button>
-                </div>
-              </div> */}
-              {/* Mobile navigation toggle */}
-              <div className="lg:hidden flex items-center">
-                <button onClick={() => setToggleMenu(!toggleMenu)}>
-                  {toggleMenu ? (
-                    <FaTimes className="h-6 scale-125 text-[#eeeeee]" />
-                  ) : (
-                    <FaBars className="h-6 scale-125 text-[#eeeeee]" />
-                  )}
-                </button>
-              </div>
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden flex items-center">
+              <button onClick={() => setToggleMenu(!toggleMenu)}>
+                {toggleMenu ? (
+                  <FaTimes className="h-6 scale-125 text-[#eeeeee]" />
+                ) : (
+                  <FaBars className="h-6 scale-125 text-[#eeeeee]" />
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -120,7 +102,7 @@ function Header() {
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
                     isActive ? "text-[#00adb5]" : "text-[#eeeeee]"
-                  }  hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#00adb5] lg:p-0`
+                  } hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#00adb5] lg:p-0`
                 }
               >
                 ABOUT ME

@@ -4,32 +4,33 @@ import { FaPhoneAlt, FaFigma } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbBrandYoutube } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   // Array of footer links with icons
   const footerLinks = [
-    { name: "Home", icon: <IoHome className="inline mr-2" />, href: "#home" },
+    { name: "Home", icon: <IoHome className="inline mr-2" />, href: "" },
     {
       name: "About Me",
       icon: <CgProfile className="inline mr-2" />,
-      href: "#about",
+      href: "/aboutme",
     },
     {
       name: "Contact",
       icon: <FaPhoneAlt className="inline mr-2" />,
-      href: "#contact",
+      href: "/contact",
     },
   ];
 
   const iconBottom = [
     {
       name: "Facebook",
-      href: "null",
+      href: "https://www.facebook.com/profile.php?id=100014808194004&mibextid=ZbWKwL",
       icon: <IoLogoFacebook className="inline mr-4 text-xl" />,
     },
     {
       name: "Instagram",
-      href: "null",
+      href: "https://www.instagram.com/aman_kr_16/profilecard/?igsh=MWl1NHJqNm5iaTk2Zg%3D%3D",
       icon: <IoLogoInstagram className="inline mr-4 text-xl" />,
     },
     {
@@ -44,7 +45,9 @@ const Footer = () => {
     },
   ];
 
-  const [figmaUrl, setFigmaUrl] = useState("https://www.figma.com/design/HXP53eMsnhbGCzejpX5wrc/Portfolio-Website-Design-(Community)?node-id=25-10165&node-type=frame&t=LtAxoDEONfLz35a7-0");
+  const [figmaUrl, setFigmaUrl] = useState(
+    "https://www.figma.com/design/HXP53eMsnhbGCzejpX5wrc/Portfolio-Website-Design-(Community)?node-id=25-10165&node-type=frame&t=LtAxoDEONfLz35a7-0"
+  );
 
   const Openfigma = () => {
     if (figmaUrl) {
@@ -60,14 +63,14 @@ const Footer = () => {
         {/* Footer Links */}
         <div className="flex flex-wrap justify-center space-x-6 space-y-4 lg:space-y-0 lg:space-x-6">
           {footerLinks.map((link, index) => (
-            <a
+            <Link
+              to={link.href}
               key={index}
-              href={link.href}
               className="hover:text-blue-400 transition duration-300 flex items-center"
             >
               {link.icon}
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -77,7 +80,8 @@ const Footer = () => {
             <a
               key={link.name}
               href={link.href}
-              className="hover:text-blue-400 transition duration-300 flex item-center mb-4 lg:mb-0"
+              className="hover:text-blue-400 transition duration-300 flex item-center mb-4 lg:mb-0 "
+              target="_blank"
             >
               {link.icon}
             </a>

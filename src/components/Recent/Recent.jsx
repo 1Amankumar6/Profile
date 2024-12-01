@@ -17,16 +17,19 @@ const Recent = () => {
 
   const randomImage = [
     {
-      img: "./images/random.png",
-      name: "Random 1",
+      img: "./images/Coutnry.png",
+      name: "Country Explorer",
+      link: "https://1amankumar6.github.io/countryExplorer/",
     },
     {
-      img: "./images/random.png",
-      name: "Random 2",
+      img: "./images/GameZone.png",
+      name: "GameZone",
+      link: "https://1amankumar6.github.io/GameCenter/",
     },
     {
-      img: "./images/random.png",
-      name: "Random 3",
+      img: "./images/TripThinker.png",
+      name: "TripThinker",
+      link: "https://1amankumar6.github.io/Trip-thinker/",
     },
   ];
 
@@ -34,24 +37,25 @@ const Recent = () => {
     <>
       {/* Title Section */}
       <div className="relative text-center bg-[#222831]">
-        <h1 className="text-5xl lg:text-6xl inline-block font-bold bg-transparent mt-24 left-20 text-white absolute">
+        <h1 className="text-5xl lg:text-6xl inline-block font-bold bg-transparent mt-24 left-9 md:left-20 text-white absolute">
           My recent <span className="text-[#00adb5]">work's</span>
         </h1>
         <div className="absolute mt-[220px] ml-0 md:ml-10 lg:ml-24 flex flex-wrap items-center justify-center gap-6">
           {randomImage.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center hover:scale-110 ml-4 bg-transparent opacity-50 backdrop-blur-md px-10 py-5 transition-all duration-300 ease-in-out"
+              className="flex flex-col items-center hover:scale-110 ml-4 bg-transparent backdrop-blur-sm px-10 py-5 transition-all duration-300 ease-in-out"
             >
-              <img
-                src={item.img} // Access the `img` property for image source
-                className="w-[320px] h-[240px]  md:h-[180px] md:w-[240px] object-contain"
-                alt={`Recent project ${index + 1}`}
-              />
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={item.img}
+                  className="w-[320px] h-[240px]  md:h-[180px] md:w-[240px] object-contain backdrop-blur-none"
+                  alt={`Recent project ${index + 1}`}
+                />
+              </a>
               <h1 className="text-white text-xl md:text-2xl mt-2">
                 {item.name}
-              </h1>{" "}
-              {/* Display name under image */}
+              </h1>
             </div>
           ))}
         </div>
@@ -66,7 +70,6 @@ const Recent = () => {
               className="h-72 w-72 object-cover rounded-lg shadow-lg"
               alt={`Recent project ${index + 1}`}
             />
-            {/* <h1 className="text-white mt-4">Project {index + 1}</h1> Display name under image */}
           </div>
         ))}
       </div>
