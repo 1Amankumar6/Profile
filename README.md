@@ -8,7 +8,6 @@ This template provides a minimal setup for building a React application using Vi
 - **Tailwind CSS**: Utility-first CSS framework for building custom designs without leaving your HTML.
 - **ESLint**: A pluggable linter tool for ensuring code quality.
 - **Redux Toolkit**: State management with slices and reducers.
-- **React Hot Toast**: For elegant notifications in your application.
 - **React Router DOM**: Declarative routing for React.
 
 ---
@@ -24,9 +23,9 @@ This template provides a minimal setup for building a React application using Vi
    ```
 
 2. When prompted, choose the following:
-   - Project name: `paste`
+   - Project name: `Profile`
    - Framework: `React`
-   - Variant: `JavaScript` or `TypeScript` as per your preference.
+   - Variant: `JavaScript`
 
 3. Navigate into the project directory:
 
@@ -110,11 +109,9 @@ This command will launch the development server, and your project will be availa
 Here is a list of all the important packages used in this project:
 
 ### Dependencies
-- **@reduxjs/toolkit**: A powerful library for managing application state with Redux.
-- **lucide-react**: Icon set for React that provides various UI icons.
+- **react-icons**: Icon set for React that provides various UI icons.
 - **react**: The core React library for building user interfaces.
 - **react-dom**: DOM bindings for React.
-- **react-hot-toast**: Notifications system for React.
 - **react-redux**: Official React bindings for Redux.
 - **react-router-dom**: Provides routing functionalities in React apps.
 
@@ -130,8 +127,8 @@ paste/
 ├── src/
 │   ├── assets/
 │   ├── components/
-│   ├── pages/
 │   ├── App.jsx
+|   ├── App.css
 │   ├── main.jsx
 │   └── index.css
 │
