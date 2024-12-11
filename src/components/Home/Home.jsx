@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [resumeLink, setResumeLink] = useState(
-    "https://drive.google.com/file/d/1jupXhjZ4GbkKMmGqNGYfG8G46wwA-BnA/view?usp=drive_link"
+    "https://drive.google.com/file/d/1x-yrPjLim4thxz-xFdSH3qM9E4-x2h4n/view?usp=drive_link"
   );
 
   // Function triggered by the button to download the resume
