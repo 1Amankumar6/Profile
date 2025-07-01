@@ -34,7 +34,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-6 w-[410px] md:w-[500px] lg:w-full z-50 flex justify-center px-4 md:px-7">
+    <header className="fixed top-6 w-[425px] md:w-[500px] lg:w-full z-50 flex justify-center px-4 md:px-7">
       <nav className="w-full max-w-5xl">
         {/* Desktop Nav */}
         <div className="hidden md:flex justify-center items-center mx-auto bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-full px-6 py-4 w-fit">
