@@ -32,7 +32,7 @@ const Home = () => {
   useGSAP(() => {
   gsap.from(".typed-text span", {
     opacity: 0,
-    duration: 1,
+    duration: 0.1,
     stagger: 0.5,
     ease: "power2.out",
   });
