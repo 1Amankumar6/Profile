@@ -26,7 +26,7 @@ function About() {
         scrollTrigger: {
           trigger: "#tableMen",
           start: "top 80%", // When the top of #tableMen hits 80% of viewport
-          toggleActions: "play reset play reset", // Only plays once
+          toggleActions: "restart none none none", // Only plays once
         },
       }
     );
