@@ -85,7 +85,7 @@ function About() {
           </div>
 
           {/* Right Image */}
-          <div className="hidden md:block relative mt-12">
+          <div className="md:block relative mt-12">
             <img
               src="./images/aboutBack.svg"
               alt="Background Design"
