@@ -1,20 +1,22 @@
-import React from "react";
-// import { Header, Home, About, Recent, Contact, Footer } from "./components";
-import Layout from "./components/Layout/Layout";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Journey from "./components/Journey/Journey";
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Recent from "./components/Recent/Recent";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <>
     <div>
-      {/* <Header />
-      <Home/>
-      <About/>
-      <Recent/>
-      <Contact/>
-      <Footer/> */}
-      <Layout/>
+      <Navbar />
+      <Home />
+      <About />
+      <Journey/>
+      <Recent />
+      <Contact />
+      <Footer />
     </div>
-    </>
   );
 }
 

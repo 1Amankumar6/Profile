@@ -5,7 +5,7 @@
 /* Global custom scrollbar styles (to be included in your main CSS file or inside your Tailwind config) */
 
 ::-webkit-scrollbar {
-  width: 8px;  /* Sets the width of the vertical scrollbar */
+  width: 8px; /* Sets the width of the vertical scrollbar */
   height: 8px; /* Sets the height of the horizontal scrollbar */
 }
 
@@ -22,6 +22,7 @@
 
 /* For Firefox */
 html {
+  scroll-behavior: smooth;
   scrollbar-width: thin; /* Controls the width of the scrollbar */
   scrollbar-color: #00adb5 #333; /* Sets the thumb and track colors */
 }

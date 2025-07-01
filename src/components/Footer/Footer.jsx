@@ -1,51 +1,47 @@
-import React, { useState } from "react";
-import { IoHome, IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
-import { FaPhoneAlt, FaFigma } from "react-icons/fa";
+import { useState } from "react";
+import {
+  IoHome,
+  IoLogoFacebook,
+  IoLogoInstagram,
+} from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbBrandYoutube } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { MdWorkHistory } from "react-icons/md";
 
 const Footer = () => {
-  // Array of footer links with icons
   const footerLinks = [
-    { name: "Home", icon: <IoHome className="inline mr-2" />, href: "" },
-    {
-      name: "About Me",
-      icon: <CgProfile className="inline mr-2" />,
-      href: "/aboutme",
-    },
-    {
-      name: "Contact",
-      icon: <FaPhoneAlt className="inline mr-2" />,
-      href: "/contact",
-    },
+    { name: "Home", icon: <IoHome className="mr-2" />, href: "/" },
+    { name: "About Me", icon: <CgProfile className="mr-2" />, href: "#about" },
+    { name: "Works", icon: <MdWorkHistory className="mr-2" />, href: "#recent" },
+    { name: "Contact", icon: <FaPhoneAlt className="mr-2" />, href: "#contact" },
   ];
 
   const iconBottom = [
     {
       name: "Facebook",
       href: "https://www.facebook.com/profile.php?id=100014808194004&mibextid=ZbWKwL",
-      icon: <IoLogoFacebook className="inline mr-4 text-xl" />,
+      icon: <IoLogoFacebook className="text-xl hover:text-blue-500" />,
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/aman_kr_16/profilecard/?igsh=MWl1NHJqNm5iaTk2Zg%3D%3D",
-      icon: <IoLogoInstagram className="inline mr-4 text-xl" />,
+      icon: <IoLogoInstagram className="text-xl hover:text-pink-500" />,
     },
     {
       name: "Twitter",
-      href: "null",
-      icon: <FaXTwitter className="inline mr-4 text-xl" />,
+      href: "#",
+      icon: <FaXTwitter className="text-xl hover:text-blue-300" />,
     },
     {
       name: "Youtube",
-      href: "null",
-      icon: <TbBrandYoutube className="inline mr-4 text-xl" />,
+      href: "#",
+      icon: <TbBrandYoutube className="text-xl hover:text-red-500" />,
     },
   ];
 
-  const [figmaUrl, setFigmaUrl] = useState(
+  const [figmaUrl] = useState(
     "https://www.figma.com/design/HXP53eMsnhbGCzejpX5wrc/Portfolio-Website-Design-(Community)?node-id=25-10165&node-type=frame&t=LtAxoDEONfLz35a7-0"
   );
 
@@ -53,55 +49,58 @@ const Footer = () => {
     if (figmaUrl) {
       window.open(figmaUrl, "_blank");
     } else {
-      console.log("Figma link is not working....");
+      alert("Figma link is not available.");
     }
   };
 
   return (
-    <footer className="bg-[#393e46] text-white py-6 pt-20">
-      <div className="container mx-auto text-center">
-        {/* Footer Links */}
-        <div className="flex flex-wrap justify-center space-x-6 space-y-4 lg:space-y-0 lg:space-x-6">
+    <footer className="bg-[#181826] text-white py-10">
+      <div className="max-w-6xl mx-auto text-center px-6">
+        {/* Footer Navigation Links */}
+        <div className="flex flex-wrap justify-center gap-6 mb-6">
           {footerLinks.map((link, index) => (
-            <Link
-              to={link.href}
+            <a
               key={index}
-              className="hover:text-blue-400 transition duration-300 flex items-center"
+              href={link.href}
+              className="flex items-center gap-1 hover:text-[#00adb5] transition-all duration-300"
             >
               {link.icon}
               {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Social Media Icons */}
-        <div className="flex justify-center mt-5 flex-wrap">
-          {iconBottom.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="hover:text-blue-400 transition duration-300 flex item-center mb-4 lg:mb-0 "
-              target="_blank"
-            >
-              {link.icon}
             </a>
           ))}
         </div>
 
+        {/* Social Media Icons */}
+        <div className="flex justify-center space-x-6 mb-6">
+          {iconBottom.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white transition duration-300 hover:scale-110"
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
+
+        {/* Optional Figma Link */}
+        {/* <div className="text-sm text-center mb-4">
+          <button
+            onClick={Openfigma}
+            className="flex items-center justify-center text-[#00adb5] hover:text-white transition"
+          >
+            <FaFigma className="mr-2" />
+            View Figma Design
+          </button>
+        </div> */}
+
         {/* Copyright */}
-        <p className="mt-10 text-sm">
-          &copy; {new Date().getFullYear()} - AMAN KUMAR || ECE
+        <p className="text-xs p-2 text-gray-400">
+          &copy; {new Date().getFullYear()} AMAN KUMAR — All rights reserved.
         </p>
       </div>
-
-      {/* Figma Link */}
-      <h3
-        onClick={Openfigma}
-        className="text-white ml-auto mr-auto mt-4 md:mt-6 text-center cursor-pointer flex items-center justify-center"
-      >
-        <FaFigma className="inline mr-2" />
-        Figma Link
-      </h3>
     </footer>
   );
 };
