@@ -26,7 +26,7 @@ function About() {
         scrollTrigger: {
           trigger: "#tableMen",
           start: "top 80%", // When the top of #tableMen hits 80% of viewport
-          toggleActions: "play reset play reset", // Only plays once
+          toggleActions: "restart none none none", // Only plays once
         },
       }
     );
@@ -85,7 +85,7 @@ function About() {
           </div>
 
           {/* Right Image */}
-          <div className="hidden md:block relative mt-12">
+          <div className=" md:block relative mt-12">
             <img
               src="./images/aboutBack.svg"
               alt="Background Design"

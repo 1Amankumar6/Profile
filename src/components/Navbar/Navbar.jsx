@@ -34,11 +34,15 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-6 w-[410px] md:w-[500px] lg:w-full z-50 flex justify-center px-4 md:px-7">
+    // <header className="fixed top-6 w-[425px] md:w-[500px] lg:w-full z-50 flex justify-center px-4 md:px-7">
+    //   <nav className="w-full max-w-5xl">
+    <header className="fixed top-7 w-full z-50 flex justify-center px-4 md:px-7">
       <nav className="w-full max-w-5xl">
         {/* Desktop Nav */}
+        {/* <div className="hidden md:flex justify-center items-center mx-auto bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-full px-6 py-4 w-fit">
+          <ul className="flex gap-6 font-semibold text-white text-lg"> */}
         <div className="hidden md:flex justify-center items-center mx-auto bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-full px-6 py-4 w-fit">
-          <ul className="flex gap-6 font-semibold text-white text-lg">
+          <ul className="flex gap-6 font-semibold text-white text-xl">
             {navItems.map((item, index) => (
               <li key={index}>
                 <a
@@ -57,8 +61,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden flex justify-between items-center px-5 py-3 bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-full">
-          <span className="text-white text-lg font-bold">Portfolio</span>
+        {/* <div className="md:hidden flex justify-between items-center px-5 py-3 bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-full">
+          <span className="text-white text-lg font-bold">Portfolio</span> */}
+        <div className="md:hidden flex justify-between items-center px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-full">
+          <span className="text-white text-xl font-bold">Portfolio</span>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white text-2xl"
@@ -69,8 +75,10 @@ const Navbar = () => {
         </div>
 
         {/* Full-Screen Mobile Menu */}
+        {/* {menuOpen && (
+          <div className="fixed top-0 left-0 w-full h-screen bg-[#1a1a2e]/95 backdrop-blur-md flex flex-col items-center justify-center z-40 transition-all duration-300 md:hidden"> */}
         {menuOpen && (
-          <div className="fixed top-0 left-0 w-full h-screen bg-[#1a1a2e]/95 backdrop-blur-md flex flex-col items-center justify-center z-40 transition-all duration-300 md:hidden">
+          <div className="md:hidden mt-2 bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-xl py-4 px-6 transition-all duration-500">
             <button
               onClick={() => setMenuOpen(false)}
               className="absolute top-6 right-6 text-white text-2xl"
@@ -78,13 +86,14 @@ const Navbar = () => {
             >
               <FaTimes />
             </button>
-            <ul className="flex flex-col gap-6 text-white text-xl font-semibold">
+            {/* <ul className="flex flex-col gap-6 text-white text-xl font-semibold"> */}
+            <ul className="flex flex-col gap-4 text-white text-base font-medium">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`px-4 py-2 rounded-md transition-all ${
+                    className={`block px-3 py-2 rounded-md transition-all ${
                       activeSection === item.href.slice(1)
                         ? "bg-[#00adb5] text-white"
                         : "hover:bg-white/20"

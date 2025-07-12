@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 /* Global custom scrollbar styles (to be included in your main CSS file or inside your Tailwind config) */
-
 ::-webkit-scrollbar {
   width: 8px; /* Sets the width of the vertical scrollbar */
   height: 8px; /* Sets the height of the horizontal scrollbar */

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
-import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -32,8 +31,9 @@ const Home = () => {
   useGSAP(() => {
   gsap.from(".typed-text span", {
     opacity: 0,
-    duration: 1,
+    duration: 0.25,
     stagger: 0.5,
+    repeat: 1,
     ease: "power2.out",
   });
 }, []);
@@ -68,7 +68,7 @@ const Home = () => {
               className="text-xl bg-[#00adb5] text-[#eeeeee] px-4 py-2 rounded-full shadow-lg hover:bg-[#007880]/90"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)" }}
             >
-              <Link to="/contact">Hire me</Link>
+              <a href="#contact">Hire me</a>
             </button>
             <button
               onClick={() => useResume()}

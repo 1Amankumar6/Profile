@@ -25,7 +25,7 @@ const Contact = () => {
         scrollTrigger: {
           trigger: "#contactMen", // Element that triggers the animation
           start: "top 80%", // Trigger point
-          toggleActions: "play reset play reset", // Replays every time it enters viewport
+          toggleActions: "restart none none none", // Replays every time it enters viewport
           // markers: true, // Optional: shows scroll trigger points for debugging
         },
       }
